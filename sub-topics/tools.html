@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DBMS Tools: XAMPP Server and SQL</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2, h3 { color: #2c3e50; }
+        ul { margin-bottom: 1em; }
+        code { background: #f4f4f4; padding: 2px 4px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <h1>DBMS Tools</h1>
+
+    <h2>1. Server: XAMPP Server</h2>
+    <ul>
+        <li>XAMPP is a free and open-source cross-platform web server solution stack package.</li>
+        <li>It includes Apache HTTP Server, MariaDB (or MySQL), and interpreters for scripts written in PHP and Perl.</li>
+        <li>Used for local development and testing of web applications that require a database.</li>
+        <li>Provides an easy way to set up a local server environment for database management and web development.</li>
+    </ul>
+
+    <h2>2. SQL (Structured Query Language)</h2>
+    <ul>
+        <li>SQL is a standard language for managing and manipulating relational databases.</li>
+        <li>It is used to perform tasks such as querying data, updating records, and managing database structures.</li>
+    </ul>
+
+    <h3>2.1 DDL (Data Definition Language)</h3>
+    <ul>
+        <li>Used to define and modify the structure of database objects (tables, schemas, etc.).</li>
+        <li>Common DDL commands:
+            <ul>
+                <li><code>CREATE</code>: Creates a new table or database.</li>
+                <li><code>ALTER</code>: Modifies an existing database object.</li>
+                <li><code>DROP</code>: Deletes tables or databases.</li>
+                <li><code>TRUNCATE</code>: Removes all records from a table, but not the table itself.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>2.2 DML (Data Manipulation Language)</h3>
+    <ul>
+        <li>Used to manipulate data stored in database tables.</li>
+        <li>Common DML commands:
+            <ul>
+                <li><code>INSERT</code>: Adds new records to a table.</li>
+                <li><code>UPDATE</code>: Modifies existing records.</li>
+                <li><code>DELETE</code>: Removes records from a table.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>2.3 DQL (Data Query Language)</h3>
+    <ul>
+        <li>Used to query and retrieve data from databases.</li>
+        <li>Main DQL command:
+            <ul>
+                <li><code>SELECT</code>: Retrieves data from one or more tables.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>2.4 DCL (Data Control Language)</h3>
+    <ul>
+        <li>Used to control access to data in the database.</li>
+        <li>Common DCL commands:
+            <ul>
+                <li><code>GRANT</code>: Gives user access privileges to the database.</li>
+                <li><code>REVOKE</code>: Removes user access privileges.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>2.5 SQL Joins</h3>
+    <ul>
+        <li>Used to combine rows from two or more tables based on a related column.</li>
+        <li>Types of joins:
+            <ul>
+                <li><strong>INNER JOIN</strong>: Returns records with matching values in both tables.</li>
+                <li><strong>LEFT JOIN (LEFT OUTER JOIN)</strong>: Returns all records from the left table, and matched records from the right table.</li>
+                <li><strong>RIGHT JOIN (RIGHT OUTER JOIN)</strong>: Returns all records from the right table, and matched records from the left table.</li>
+                <li><strong>FULL JOIN (FULL OUTER JOIN)</strong>: Returns all records when there is a match in either left or right table.</li>
+            </ul>
+        </li>
+        <li>Joins are essential for querying data spread across multiple tables.</li>
+    </ul>
+</body>
+</html>

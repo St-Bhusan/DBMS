@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD Operations in SQL</title>
+</head>
+
+<body>
+    <h1>CRUD Operations: Definition and Implementation</h1>
+    <p>
+        CRUD stands for Create, Read, Update, and Delete. These are the four basic operations that can be performed on
+        data in a database. Understanding these operations is essential for anyone working with databases.
+    <p>
+        <strong>CRUD</strong> stands for <strong>Create, Read, Update, and Delete</strong>. These are the four
+        fundamental operations used to manage persistent data in databases and many applications. Understanding CRUD is
+        essential for building software that interacts with data storage systems, such as relational databases, NoSQL
+        databases, or even simple file systems.
+    </p>
+    <ul>
+        <li>
+            <strong>Create</strong>: This operation adds new records or data entries to a database. For example, when a
+            user registers on a website, their information is stored as a new record. In SQL, this is typically done
+            using the <code>INSERT</code> statement.
+        </li>
+        <li>
+            <strong>Read</strong>: This operation retrieves or views existing records from the database without
+            modifying them. For instance, displaying a list of users or searching for a specific product uses the Read
+            operation. In SQL, this is performed with the <code>SELECT</code> statement.
+        </li>
+        <li>
+            <strong>Update</strong>: This operation modifies existing records in the database. For example, editing a
+            user's profile or changing a product's price involves updating data. In SQL, the <code>UPDATE</code>
+            statement is used for this purpose.
+        </li>
+        <li>
+            <strong>Delete</strong>: This operation removes records from the database. For example, deleting a user
+            account or removing an item from inventory uses the Delete operation. In SQL, this is done with the
+            <code>DELETE</code> statement.
+        </li>
+    </ul>
+    <p>
+        CRUD operations are the foundation of most web applications and APIs. They ensure that users and systems can
+        create new data, access and display existing data, make changes when necessary, and remove data that is no
+        longer needed. Well-designed CRUD functionality is crucial for maintaining data integrity and providing a good
+        user experience.
+    </p>
+
+    <h2>Basic Implementation in SQL</h2>
+    <p>
+        SQL (Structured Query Language) provides specific statements for each CRUD operation:
+    </p>
+    <ul>
+        <li>
+            <strong>Create</strong>: <code>INSERT INTO</code><br>
+            <em>Example:</em> <code>INSERT INTO users (name, email) VALUES ('Alice', 'alice@example.com');</code>
+        </li>
+        <li>
+            <strong>Read</strong>: <code>SELECT</code><br>
+            <em>Example:</em> <code>SELECT * FROM users;</code>
+        </li>
+        <li>
+            <strong>Update</strong>: <code>UPDATE</code><br>
+            <em>Example:</em> <code>UPDATE users SET email = 'alice@newdomain.com' WHERE name = 'Alice';</code>
+        </li>
+        <li>
+            <strong>Delete</strong>: <code>DELETE FROM</code><br>
+            <em>Example:</em> <code>DELETE FROM users WHERE name = 'Alice';</code>
+        </li>
+    </ul>
+    <h3>Note</h3>
+    <p>
+        CRUD operations form the foundation of database management. In SQL, these operations are implemented using
+        simple and intuitive commands, making it easy to manipulate and maintain data.
+    </p>
+</body>
+
+</html>
