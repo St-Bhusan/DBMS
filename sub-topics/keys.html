@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keys in Database</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; background: #f9f9f9; }
+        h1, h2 { color: #2c3e50; }
+        ul { margin-left: 2em; }
+        .key-type { margin-bottom: 1.5em; }
+    </style>
+</head>
+<body>
+    <h1>Keys in Database</h1>
+    <p>
+        <strong>Keys</strong> are attributes or sets of attributes that are used to uniquely identify rows (records) in a database table. They ensure that each record can be uniquely distinguished from others and help establish relationships between tables.
+    </p>
+
+    <h2>Types of Keys</h2>
+    <ul>
+        <li>
+            <div class="key-type">
+                <strong>1. Primary Key</strong><br>
+                A primary key is a column or a set of columns that uniquely identifies each record in a table. It cannot have NULL values and must contain unique values.
+            </div>
+        </li>
+        <li>
+            <div class="key-type">
+                <strong>2. Candidate Key</strong><br>
+                Candidate keys are columns or sets of columns that can uniquely identify records in a table. There can be multiple candidate keys in a table, but only one is chosen as the primary key.
+            </div>
+        </li>
+        <li>
+            <div class="key-type">
+                <strong>3. Super Key</strong><br>
+                A super key is any combination of columns that can uniquely identify a record in a table. All candidate keys are super keys, but not all super keys are candidate keys.
+            </div>
+        </li>
+        <li>
+            <div class="key-type">
+                <strong>4. Alternate Key</strong><br>
+                Alternate keys are candidate keys that are not chosen as the primary key.
+            </div>
+        </li>
+        <li>
+            <div class="key-type">
+                <strong>5. Foreign Key</strong><br>
+                A foreign key is a column or set of columns in one table that refers to the primary key of another table. It is used to establish and enforce a link between the data in two tables.
+            </div>
+        </li>
+        <li>
+            <div class="key-type">
+                <strong>6. Composite Key</strong><br>
+                A composite key is a combination of two or more columns that together uniquely identify a record in a table.
+            </div>
+        </li>
+        <li>
+            <div class="key-type">
+                <strong>7. Unique Key</strong><br>
+                A unique key ensures that all values in a column or a set of columns are unique across the table. Unlike the primary key, a unique key can have NULL values.
+            </div>
+        </li>
+    </ul>
+</body>
+</html>

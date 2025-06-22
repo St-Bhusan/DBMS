@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SQL Constraints - Definition, Types, and Explanation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; line-height: 1.7; }
+        h1, h2, h3 { color: #2c3e50; }
+        ul { margin-left: 2em; }
+        code { background: #f4f4f4; padding: 2px 4px; border-radius: 3px; }
+        pre { background: #f4f4f4; padding: 1em; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>SQL Constraints: Definition, Types, and In-depth Explanation</h1>
+
+    <h2>What are SQL Constraints?</h2>
+    <p>
+        SQL constraints are rules enforced on columns in a table to ensure the accuracy, reliability, and integrity of the data stored in a relational database. Constraints restrict the type of data that can be inserted, updated, or deleted from a table, thereby maintaining the consistency of the database.
+    </p>
+
+    <h2>Types of SQL Constraints</h2>
+    <ul>
+        <li>NOT NULL</li>
+        <li>UNIQUE</li>
+        <li>PRIMARY KEY</li>
+        <li>FOREIGN KEY</li>
+        <li>CHECK</li>
+        <li>DEFAULT</li>
+    </ul>
+
+    <h2>Detailed Explanation of Each Constraint</h2>
+
+    <h3>1. NOT NULL Constraint</h3>
+    <p>
+        The <code>NOT NULL</code> constraint ensures that a column cannot have a <code>NULL</code> value. This means every row in the table must have a value for this column. It is commonly used for columns that require mandatory data, such as user names or IDs.
+    </p>
+    <pre><code>CREATE TABLE Employees (
+    EmployeeID INT NOT NULL,
+    Name VARCHAR(100) NOT NULL
+);</code></pre>
+
+    <h3>2. UNIQUE Constraint</h3>
+    <p>
+        The <code>UNIQUE</code> constraint ensures that all values in a column or a set of columns are distinct from each other. Unlike the <code>PRIMARY KEY</code>, a table can have multiple <code>UNIQUE</code> constraints, and columns with <code>UNIQUE</code> constraints can accept <code>NULL</code> values (except in some databases).
+    </p>
+    <pre><code>CREATE TABLE Employees (
+    Email VARCHAR(255) UNIQUE
+);</code></pre>
+
+    <h3>3. PRIMARY KEY Constraint</h3>
+    <p>
+        The <code>PRIMARY KEY</code> constraint uniquely identifies each record in a table. It combines the properties of <code>NOT NULL</code> and <code>UNIQUE</code>, meaning no two rows can have the same primary key value, and it cannot be <code>NULL</code>. Each table can have only one primary key, which may consist of single or multiple columns (composite key).
+    </p>
+    <pre><code>CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY
+);</code></pre>
+
+    <h3>4. FOREIGN KEY Constraint</h3>
+    <p>
+        The <code>FOREIGN KEY</code> constraint establishes a relationship between two tables by linking a column (or columns) in one table to the <code>PRIMARY KEY</code> or <code>UNIQUE</code> key in another table. It ensures referential integrity, meaning the value in the foreign key column must exist in the referenced table.
+    </p>
+    <pre><code>CREATE TABLE Departments (
+    DepartmentID INT PRIMARY KEY
+);
+
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    DepartmentID INT,
+    FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID)
+);</code></pre>
+
+    <h3>5. CHECK Constraint</h3>
+    <p>
+        The <code>CHECK</code> constraint enforces a condition that each row must satisfy. It can be used to limit the range of values that can be placed in a column, such as ensuring an age is greater than zero or a salary is within a certain range.
+    </p>
+    <pre><code>CREATE TABLE Employees (
+    Age INT CHECK (Age &gt;= 18),
+    Salary DECIMAL(10,2) CHECK (Salary &gt; 0)
+);</code></pre>
+
+    <h3>6. DEFAULT Constraint</h3>
+    <p>
+        The <code>DEFAULT</code> constraint assigns a default value to a column if no value is specified during an insert operation. This helps in ensuring that a column always has a value, even if the user does not provide one.
+    </p>
+    <pre><code>CREATE TABLE Employees (
+    JoinDate DATE DEFAULT CURRENT_DATE
+);</code></pre>
+
+    <h2>Conclusion</h2>
+    <p>
+        SQL constraints are essential for maintaining data integrity and enforcing business rules at the database level. By carefully applying these constraints, database designers can prevent invalid data entry and ensure the reliability of the database system.
+    </p>
+</body>
+</html>

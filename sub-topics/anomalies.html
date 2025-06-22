@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Database Anomalies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; line-height: 1.7; }
+        h1, h2 { color: #2c3e50; }
+        ul { margin-left: 2em; }
+        .anomaly { margin-bottom: 2em; }
+    </style>
+</head>
+<body>
+    <h1>Database Anomalies</h1>
+    <p>
+        In the context of relational databases, <strong>anomalies</strong> are problems that can occur when inserting, updating, or deleting data in a database that is not properly normalized. These anomalies can lead to data inconsistency, redundancy, and loss of information. The three main types of anomalies are <strong>insertion anomaly</strong>, <strong>update anomaly</strong>, and <strong>deletion anomaly</strong>.
+    </p>
+
+    <h2>Types of Database Anomalies</h2>
+    <ul>
+        <li>Insertion Anomaly</li>
+        <li>Update Anomaly</li>
+        <li>Deletion Anomaly</li>
+    </ul>
+
+    <div class="anomaly">
+        <h2>1. Insertion Anomaly</h2>
+        <p>
+            An <strong>insertion anomaly</strong> occurs when certain attributes cannot be inserted into the database without the presence of other attributes. This typically happens when a table is designed to store multiple types of information together, leading to situations where some data cannot be recorded unless unrelated data is also provided.
+        </p>
+        <p>
+            <strong>Example:</strong> Consider a table that stores both student and course information. If a new course is introduced but no student has enrolled yet, it may not be possible to insert the course details without also inserting a student record, resulting in incomplete or dummy data.
+        </p>
+        <p>
+            <strong>Impact:</strong> Insertion anomalies can prevent the database from accurately representing real-world situations and may force the insertion of artificial or null values, leading to data inconsistency.
+        </p>
+    </div>
+
+    <div class="anomaly">
+        <h2>2. Update Anomaly</h2>
+        <p>
+            An <strong>update anomaly</strong> arises when changes to data require multiple rows to be updated, and a failure to update all relevant rows leads to inconsistent data. This is common in tables where the same piece of information is duplicated in multiple places.
+        </p>
+        <p>
+            <strong>Example:</strong> If an instructor's office number is stored in several rows (one for each course they teach), updating the office number requires changing it in every row. If one row is missed, the database will contain conflicting information.
+        </p>
+        <p>
+            <strong>Impact:</strong> Update anomalies can result in data inconsistency and make it difficult to maintain accurate and reliable information in the database.
+        </p>
+    </div>
+
+    <div class="anomaly">
+        <h2>3. Deletion Anomaly</h2>
+        <p>
+            A <strong>deletion anomaly</strong> occurs when the deletion of data representing certain facts also unintentionally removes other valuable information. This typically happens when unrelated data is stored together in the same table.
+        </p>
+        <p>
+            <strong>Example:</strong> If a student drops their last course and their record is deleted from a table that stores both student and course information, all information about the student (such as their contact details) may be lost, even though it may still be needed.
+        </p>
+        <p>
+            <strong>Impact:</strong> Deletion anomalies can lead to unintended loss of data and make it difficult to preserve important information.
+        </p>
+    </div>
+
+    <h2>Conclusion</h2>
+    <p>
+        Database anomalies highlight the importance of proper database design and normalization. By organizing data into well-structured tables and minimizing redundancy, these anomalies can be avoided, ensuring data integrity and consistency.
+    </p>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Normalization in DBMS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; line-height: 1.7; }
+        h1, h2, h3 { color: #2c3e50; }
+        ul { margin-left: 2em; }
+        code { background: #f4f4f4; padding: 2px 4px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <h1>Normalization in DBMS</h1>
+    <p>
+        <strong>Normalization</strong> is a systematic approach of organizing data in a relational database to minimize redundancy and improve data integrity. The main objective of normalization is to divide large tables into smaller, related tables and link them using relationships. This process helps in eliminating duplicate data, ensuring logical data storage, and making the database more efficient.
+    </p>
+    <h2>Why is Normalization Needed?</h2>
+    <ul>
+        <li>To eliminate redundant (repetitive) data.</li>
+        <li>To ensure data dependencies make sense (only storing related data in a table).</li>
+        <li>To protect the database against anomalies during insert, update, or delete operations.</li>
+        <li>To improve data consistency and integrity.</li>
+    </ul>
+    <h2>Types of Normal Forms</h2>
+    <p>
+        Normalization is carried out in several steps, each step corresponding to a "normal form". The most commonly used normal forms are:
+    </p>
+    <h3>1. First Normal Form (1NF)</h3>
+    <ul>
+        <li>Ensures that each column contains only atomic (indivisible) values.</li>
+        <li>Each record needs to be unique.</li>
+        <li>No repeating groups or arrays are allowed in a table.</li>
+    </ul>
+    <p><strong>Example:</strong> A table with multiple phone numbers in a single field violates 1NF.</p>
+
+    <h3>2. Second Normal Form (2NF)</h3>
+    <ul>
+        <li>Table must be in 1NF.</li>
+        <li>All non-key attributes must be fully functionally dependent on the entire primary key (no partial dependency).</li>
+        <li>Applies mainly to tables with composite primary keys.</li>
+    </ul>
+    <p><strong>Example:</strong> If a table's non-key attribute depends only on part of a composite key, it violates 2NF.</p>
+
+    <h3>3. Third Normal Form (3NF)</h3>
+    <ul>
+        <li>Table must be in 2NF.</li>
+        <li>There should be no transitive dependency for non-prime attributes (non-key attributes should not depend on other non-key attributes).</li>
+    </ul>
+    <p><strong>Example:</strong> If a table has columns A (primary key), B, and C, and C depends on B, not directly on A, it violates 3NF.</p>
+
+    <h3>4. Boyce-Codd Normal Form (BCNF)</h3>
+    <ul>
+        <li>Stricter version of 3NF.</li>
+        <li>For every functional dependency (X → Y), X should be a super key.</li>
+        <li>Eliminates certain types of anomalies not handled by 3NF.</li>
+    </ul>
+
+    <h3>5. Fourth Normal Form (4NF)</h3>
+    <ul>
+        <li>Table must be in BCNF.</li>
+        <li>There should be no multi-valued dependencies except a candidate key.</li>
+        <li>Deals with cases where a table contains two or more independent multi-valued facts about an entity.</li>
+    </ul>
+
+    <h3>6. Fifth Normal Form (5NF)</h3>
+    <ul>
+        <li>Table must be in 4NF.</li>
+        <li>Deals with cases where information can be reconstructed from smaller pieces of information that are stored in the database.</li>
+        <li>Eliminates join dependency anomalies.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>
+        Normalization is essential for designing efficient, reliable, and scalable relational databases. By applying various normal forms, database designers can ensure data consistency, reduce redundancy, and prevent anomalies, leading to better data management and performance.
+    </p>
+</body>
+</html>
